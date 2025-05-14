@@ -22,5 +22,11 @@ def character_counter():
             character_list.append(new_char)
         else:
             continue
-        print(character_list)
-    return new_char
+    
+    for char in character_list:
+        if char not in character_dict:
+            character_dict[char]
+        else:
+            character_dict[char] += 1
+    
+    return character_dict
