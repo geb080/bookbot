@@ -21,15 +21,13 @@ def character_counter():
     #loop over words to split (which is already in str format)
     for character in words_to_split:
         #add characters to list
-        if character not in character_list:
-            new_char = character.lower()
-            character_list.append(new_char)
-        else:
-            continue
+        new_char = character.lower()
+        character_list.append(new_char)
+        
     
     #loop over list to add characters as keys to dictionary and assign values to those keys
     for char in character_list:
-        
+
         if char not in character_dict:
             character_dict[char] = 1
         else:
