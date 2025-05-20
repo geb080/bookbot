@@ -34,3 +34,10 @@ def character_counter():
             character_dict[char] += 1
 
     return character_dict
+
+character_dict = character_counter()
+character_dict_values = character_dict[0]
+print(list(character_dict_values))
+
+def character_sorter():
+    print("The thing ended.")
