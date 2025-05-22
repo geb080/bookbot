@@ -33,11 +33,11 @@ def character_counter():
         else:
             character_dict[char] += 1
 
-    return character_dict
+    return character_dict, character_dict[char]
 
 character_dict = character_counter()
-character_dict_values = character_dict[0]
-print(list(character_dict_values))
+
+character_list = list(character_dict)
 
 def character_sorter():
-    print("The thing ended.")
+    print(character_list)
