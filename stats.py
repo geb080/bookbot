@@ -15,9 +15,10 @@ def count_words():
 
 def character_counter():
     #establishes our list and the dictionary that it will be converted to.
-    #its in list form so i can make everything lowercase and store the values temporarily as strings
+    #using a list so i can make everything lowercase and store the values temporarily as strings
     character_dict = {}
     character_list = []
+    
     #loop over words to split (which is already in str format)
     for character in words_to_split:
         #add characters to list
@@ -32,12 +33,36 @@ def character_counter():
             character_dict[char] = 1
         else:
             character_dict[char] += 1
+    
+    return character_dict
 
-    return character_dict, character_dict[char]
+characters_to_sort = character_counter()
 
-character_dict = character_counter()
+def get_val(x):
+    val_list = []
+    for value in characters_to_sort:
+        character_values = characters_to_sort[value]
+        val_list.append(character_values)
+    return val_list[x]
 
-character_list = list(character_dict)
+for value in characters_to_sort:
+    character_values = characters_to_sort[value]
+
+def sort_on(dict):
+    return dict["num"]
 
 def character_sorter():
-    print(character_list)
+    ultimate_list = []
+    count = 0
+    for char in characters_to_sort:
+        char_dict = {}
+        char_dict["char"] = char
+        value = get_val(count)
+        count += 1
+        char_dict["num"] = value
+        ultimate_list.append(char_dict)
+
+    ultimate_list.sort(reverse=True, key=sort_on)
+   
+
+    return ultimate_list
