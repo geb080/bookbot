@@ -66,3 +66,28 @@ def character_sorter():
    
 
     return ultimate_list
+
+   
+
+final_form = character_sorter()
+
+
+
+def bookbot_complete():
+    srsly_last = ""
+    last_list = []
+    for value in final_form:
+        final_dict = value
+        character = final_dict['char']
+        val = final_dict['num']
+        if character.isalpha() == True:
+            last_list.append(f"{character}: {val}")
+        else:
+            continue
+    
+    for val in last_list:
+        new_val = val+"\n"
+        srsly_last += new_val
+    
+    return srsly_last
+
